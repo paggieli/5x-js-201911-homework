@@ -24,13 +24,22 @@
         
         lottery() 若是未傳入參數則預設印出一組樂透數字。
     */
+    var lottery = function (count) {  
+      if (count===undefined) {count=1}  
+      for(var i=count; i>0; i--){
+        var lot_num = [];
+        var number;
+        while( lot_num.length < 6 ){
+          number = parseInt( Math.random() * 49 + 1, 10 );
 
-    var lottery = function () {
-
+          if( lot_num.indexOf( number ) === -1 ){
+          lot_num.push( number );
+          }   
+        }
+        console.log(lot_num);
+      }
     }
-
   </script>
-
 
 </body>
 
